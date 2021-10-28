@@ -27,7 +27,9 @@ const ChildrenSection: React.FC<IChildrenProps> = ({
   return (
     <StyledChildrenSection>
       Дети (макс. 5):
-      <StyledAddChildBtn onClick={onAddChild}>Добавить ребёнка</StyledAddChildBtn>
+      {stateChildren.length < 5 && (
+        <StyledAddChildBtn onClick={onAddChild}>Добавить ребёнка</StyledAddChildBtn>
+      )}
       <div className="children-wrapper">{children}</div>
     </StyledChildrenSection>
   );
